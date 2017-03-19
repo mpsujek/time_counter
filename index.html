@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js" charset="utf-8"></script>
     <title>Time Counter</title>
 </head>
 
 <body>
     <header>
         <h2>Simple time counter</h2>
-        <p>For my wife to let her know how much she slept ;)</p>
+        <p id="actualTime"></p>
+        <p class="dedication">For my wife to let her know how much she slept ;)</p>
     </header>
     <section>
-        <button id="make_point" class="button" type="button" name="button">Click Me !</button>
+        <button id="make_point" class="button" type="button" name="button">Make time stamp !</button>
+        <input id="comment" type="text" placeholder="Add comment" name="" value="">
         <ul id="list">
         </ul>
+        <button id="clear_local" class="button button2" type="button" name="button">Clear Memory!</button>
+
     </section>
+    <script src="js/app.js" charset="utf-8"></script>
 </body>
 
 </html>
