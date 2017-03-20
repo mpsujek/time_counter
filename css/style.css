@@ -42,4 +42,11 @@ input{
 li{
   line-height: 1.5em;
   margin: 1em;
+  background: #B2EBF2;
+  text-indent: 5px;
+
+}
+
+.comment{
+  margin-left: 2em;
 }
