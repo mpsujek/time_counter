@@ -5,6 +5,13 @@ var commentsArray = [];
 var commentsAfterLoad = localStorage.getItem('comment');
 var lastEndTime = localStorage.getItem('endTime');
 
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
 //checking if there is something in localstorage if not array will be clear if there is somethin it will be iserted to array
 if (commentsAfterLoad === null) {
     commentsArray = [];
@@ -24,10 +31,10 @@ if (commentsAfterLoad === null) {
     var clearBtn = document.getElementById('clear_local');
     var actualTime = document.getElementById('actualTime');
 
-    li.appendChild(document.createTextNode("Actual Time - " + hour + ":" + minute + ":" + second));
+    li.appendChild(document.createTextNode("Actual Time - " + checkTime(hour) + ":" + checkTime(minute) + ":" + checkTime(second)));
     ul.appendChild(li);
 
-    actualTime.appendChild(document.createTextNode("Actual Time - " + hour + ":" + minute + ":" + second));
+    actualTime.appendChild(document.createTextNode("Actual Time - " + checkTime(hour) + ":" + checkTime(minute) + ":" + checkTime(second)));
 
     // adding new element to list with actual time, comment and time from last checkpoint
     button.onclick = function() {
@@ -57,7 +64,7 @@ if (commentsAfterLoad === null) {
         var commentText = document.getElementById('comment').value;
         // var text = document.createTextNode("Actual time on click: " + hour + ":" + minute + ":" + second + " Time spend - " + hours + " hours " + minutes + " min. " + seconds + " sec. " + "Comment: " + commentText);
 
-        var text = "Time on click: " + hour + ":" + minute + ":" + second + " Time spend - " + hours + " hours " + minutes + " min. " + seconds + " sec. " + "Comment: " + commentText;
+        var text = "Time on click: " + checkTime(hour) + ":" + checkTime(minute) + ":" + checkTime(second) + " Time from previous check - " + hours + " hours " + minutes + " min. " + seconds + " sec. " + "Comment: " + commentText;
 
         createList(ul, text);
         commentsArray.push(text);
